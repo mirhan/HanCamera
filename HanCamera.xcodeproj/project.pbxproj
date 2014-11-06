@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		31E2ED381A0B1B78008FB715 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E2ED371A0B1B78008FB715 /* main.m */; };
+		31E2ED3B1A0B1B78008FB715 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E2ED3A1A0B1B78008FB715 /* AppDelegate.m */; };
+		31E2ED3E1A0B1B78008FB715 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E2ED3D1A0B1B78008FB715 /* ViewController.m */; };
+		31E2ED411A0B1B78008FB715 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31E2ED3F1A0B1B78008FB715 /* Main.storyboard */; };
+		31E2ED431A0B1B78008FB715 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31E2ED421A0B1B78008FB715 /* Images.xcassets */; };
+		31E2ED461A0B1B78008FB715 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31E2ED441A0B1B78008FB715 /* LaunchScreen.xib */; };
+		31E2ED521A0B1B78008FB715 /* HanCameraTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E2ED511A0B1B78008FB715 /* HanCameraTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		31E2ED4C1A0B1B78008FB715 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31E2ED2A1A0B1B78008FB715 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 31E2ED311A0B1B78008FB715;
+			remoteInfo = HanCamera;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		31E2ED321A0B1B78008FB715 /* HanCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HanCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		31E2ED361A0B1B78008FB715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31E2ED371A0B1B78008FB715 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		31E2ED391A0B1B78008FB715 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		31E2ED3A1A0B1B78008FB715 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		31E2ED3C1A0B1B78008FB715 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		31E2ED3D1A0B1B78008FB715 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		31E2ED401A0B1B78008FB715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		31E2ED421A0B1B78008FB715 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		31E2ED451A0B1B78008FB715 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		31E2ED4B1A0B1B78008FB715 /* HanCameraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HanCameraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		31E2ED501A0B1B78008FB715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31E2ED511A0B1B78008FB715 /* HanCameraTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HanCameraTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		31E2ED2F1A0B1B78008FB715 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31E2ED481A0B1B78008FB715 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		31E2ED291A0B1B78008FB715 = {
+			isa = PBXGroup;
+			children = (
+				31E2ED341A0B1B78008FB715 /* HanCamera */,
+				31E2ED4E1A0B1B78008FB715 /* HanCameraTests */,
+				31E2ED331A0B1B78008FB715 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		31E2ED331A0B1B78008FB715 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				31E2ED321A0B1B78008FB715 /* HanCamera.app */,
+				31E2ED4B1A0B1B78008FB715 /* HanCameraTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		31E2ED341A0B1B78008FB715 /* HanCamera */ = {
+			isa = PBXGroup;
+			children = (
+				31E2ED391A0B1B78008FB715 /* AppDelegate.h */,
+				31E2ED3A1A0B1B78008FB715 /* AppDelegate.m */,
+				31E2ED3C1A0B1B78008FB715 /* ViewController.h */,
+				31E2ED3D1A0B1B78008FB715 /* ViewController.m */,
+				31E2ED3F1A0B1B78008FB715 /* Main.storyboard */,
+				31E2ED421A0B1B78008FB715 /* Images.xcassets */,
+				31E2ED441A0B1B78008FB715 /* LaunchScreen.xib */,
+				31E2ED351A0B1B78008FB715 /* Supporting Files */,
+			);
+			path = HanCamera;
+			sourceTree = "<group>";
+		};
+		31E2ED351A0B1B78008FB715 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				31E2ED361A0B1B78008FB715 /* Info.plist */,
+				31E2ED371A0B1B78008FB715 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		31E2ED4E1A0B1B78008FB715 /* HanCameraTests */ = {
+			isa = PBXGroup;
+			children = (
+				31E2ED511A0B1B78008FB715 /* HanCameraTests.m */,
+				31E2ED4F1A0B1B78008FB715 /* Supporting Files */,
+			);
+			path = HanCameraTests;
+			sourceTree = "<group>";
+		};
+		31E2ED4F1A0B1B78008FB715 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				31E2ED501A0B1B78008FB715 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		31E2ED311A0B1B78008FB715 /* HanCamera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31E2ED551A0B1B78008FB715 /* Build configuration list for PBXNativeTarget "HanCamera" */;
+			buildPhases = (
+				31E2ED2E1A0B1B78008FB715 /* Sources */,
+				31E2ED2F1A0B1B78008FB715 /* Frameworks */,
+				31E2ED301A0B1B78008FB715 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HanCamera;
+			productName = HanCamera;
+			productReference = 31E2ED321A0B1B78008FB715 /* HanCamera.app */;
+			productType = "com.apple.product-type.application";
+		};
+		31E2ED4A1A0B1B78008FB715 /* HanCameraTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31E2ED581A0B1B78008FB715 /* Build configuration list for PBXNativeTarget "HanCameraTests" */;
+			buildPhases = (
+				31E2ED471A0B1B78008FB715 /* Sources */,
+				31E2ED481A0B1B78008FB715 /* Frameworks */,
+				31E2ED491A0B1B78008FB715 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				31E2ED4D1A0B1B78008FB715 /* PBXTargetDependency */,
+			);
+			name = HanCameraTests;
+			productName = HanCameraTests;
+			productReference = 31E2ED4B1A0B1B78008FB715 /* HanCameraTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		31E2ED2A1A0B1B78008FB715 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "韩畅";
+				TargetAttributes = {
+					31E2ED311A0B1B78008FB715 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					31E2ED4A1A0B1B78008FB715 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 31E2ED311A0B1B78008FB715;
+					};
+				};
+			};
+			buildConfigurationList = 31E2ED2D1A0B1B78008FB715 /* Build configuration list for PBXProject "HanCamera" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 31E2ED291A0B1B78008FB715;
+			productRefGroup = 31E2ED331A0B1B78008FB715 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				31E2ED311A0B1B78008FB715 /* HanCamera */,
+				31E2ED4A1A0B1B78008FB715 /* HanCameraTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		31E2ED301A0B1B78008FB715 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31E2ED411A0B1B78008FB715 /* Main.storyboard in Resources */,
+				31E2ED461A0B1B78008FB715 /* LaunchScreen.xib in Resources */,
+				31E2ED431A0B1B78008FB715 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31E2ED491A0B1B78008FB715 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		31E2ED2E1A0B1B78008FB715 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31E2ED3E1A0B1B78008FB715 /* ViewController.m in Sources */,
+				31E2ED3B1A0B1B78008FB715 /* AppDelegate.m in Sources */,
+				31E2ED381A0B1B78008FB715 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		31E2ED471A0B1B78008FB715 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31E2ED521A0B1B78008FB715 /* HanCameraTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		31E2ED4D1A0B1B78008FB715 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 31E2ED311A0B1B78008FB715 /* HanCamera */;
+			targetProxy = 31E2ED4C1A0B1B78008FB715 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		31E2ED3F1A0B1B78008FB715 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				31E2ED401A0B1B78008FB715 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		31E2ED441A0B1B78008FB715 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				31E2ED451A0B1B78008FB715 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		31E2ED531A0B1B78008FB715 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		31E2ED541A0B1B78008FB715 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		31E2ED561A0B1B78008FB715 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HanCamera/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		31E2ED571A0B1B78008FB715 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = HanCamera/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		31E2ED591A0B1B78008FB715 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HanCameraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HanCamera.app/HanCamera";
+			};
+			name = Debug;
+		};
+		31E2ED5A1A0B1B78008FB715 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HanCameraTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HanCamera.app/HanCamera";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		31E2ED2D1A0B1B78008FB715 /* Build configuration list for PBXProject "HanCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31E2ED531A0B1B78008FB715 /* Debug */,
+				31E2ED541A0B1B78008FB715 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		31E2ED551A0B1B78008FB715 /* Build configuration list for PBXNativeTarget "HanCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31E2ED561A0B1B78008FB715 /* Debug */,
+				31E2ED571A0B1B78008FB715 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		31E2ED581A0B1B78008FB715 /* Build configuration list for PBXNativeTarget "HanCameraTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31E2ED591A0B1B78008FB715 /* Debug */,
+				31E2ED5A1A0B1B78008FB715 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 31E2ED2A1A0B1B78008FB715 /* Project object */;
+}
