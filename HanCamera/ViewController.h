@@ -11,8 +11,11 @@
 
 @interface ViewController : UIViewController
 
-@property (nonatomic,retain) IBOutlet UIView *videoPreviewView;
 @property (nonatomic,retain) AVCaptureSession *session;
+@property AVCaptureStillImageOutput *imageOutput;
+
+#pragma mark Actions
+- (IBAction)snapeImageButton:(id)sender;
 
 @end
 
