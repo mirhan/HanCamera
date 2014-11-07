@@ -13,23 +13,14 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OGA-Ch-cPK">
-                                <rect key="frame" x="31" y="28" width="260" height="368"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OGA-Ch-cPK">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsM-30-cOg">
-                                        <rect key="frame" x="201" y="8" width="47" height="30"/>
-                                        <state key="normal" title="Switch">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="switchCameraButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gnI-NC-0gX"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VsT-B0-nyO">
-                                        <rect key="frame" x="13" y="8" width="46" height="30"/>
+                                        <rect key="frame" x="8" y="17" width="46" height="30"/>
                                         <state key="normal" title="Auto">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -37,34 +28,46 @@
                                             <action selector="clickFlashlightButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="EAz-dQ-dQj"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6g-SZ-Xt9">
+                                        <rect key="frame" x="16" y="530" width="30" height="30"/>
+                                        <state key="normal" title="Roll">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickCameraRollButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Hxh-GR-6yt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7d-VB-NWL">
+                                        <rect key="frame" x="138" y="530" width="44" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <state key="normal" title="Snap"/>
+                                        <connections>
+                                            <action selector="clickSnapeImageButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fef-Wl-ngN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsM-30-cOg">
+                                        <rect key="frame" x="265" y="17" width="47" height="30"/>
+                                        <state key="normal" title="Switch">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="switchCameraButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gnI-NC-0gX"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6g-SZ-Xt9">
-                                <rect key="frame" x="64" y="412" width="30" height="30"/>
-                                <state key="normal" title="Roll">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="clickCameraRollButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Hxh-GR-6yt"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7d-VB-NWL">
-                                <rect key="frame" x="139" y="412" width="44" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="5vB-0r-esK"/>
-                                    <constraint firstAttribute="width" constant="44" id="mtF-qA-Nz1"/>
+                                    <constraint firstAttribute="centerX" secondItem="X7d-VB-NWL" secondAttribute="centerX" id="5Xb-hS-83G"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Snap"/>
-                                <connections>
-                                    <action selector="clickSnapeImageButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fef-Wl-ngN"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OGA-Ch-cPK" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" id="2i5-Fe-YbN"/>
+                            <constraint firstItem="OGA-Ch-cPK" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" id="QUM-Oz-ACw"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="flashlightButton" destination="VsT-B0-nyO" id="v0m-ZA-9JE"/>
                         <outlet property="previewLayer" destination="OGA-Ch-cPK" id="egX-0b-HmP"/>

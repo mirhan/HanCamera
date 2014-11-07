@@ -47,7 +47,7 @@
     
     CALayer *rootLayer = [[self previewLayer] layer];
     [rootLayer setMasksToBounds:YES];
-    [previewLayer setFrame:CGRectMake(-70, 0, rootLayer.bounds.size.height, rootLayer.bounds.size.height)];
+    [previewLayer setFrame:CGRectMake(0, 0, rootLayer.bounds.size.height, rootLayer.bounds.size.height)];
     [rootLayer insertSublayer:previewLayer atIndex:0];
     
     // output
