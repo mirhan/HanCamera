@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface ViewController : UIViewController
 
+@property (nonatomic,retain) IBOutlet UIView *videoPreviewView;
+@property (nonatomic,retain) AVCaptureSession *session;
 
 @end
 
