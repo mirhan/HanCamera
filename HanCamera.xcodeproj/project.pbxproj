@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		311B7F751A0BBA9F002083C9 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 311B7F741A0BBA9F002083C9 /* iTunesArtwork.png */; };
 		31E2ED381A0B1B78008FB715 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E2ED371A0B1B78008FB715 /* main.m */; };
 		31E2ED3B1A0B1B78008FB715 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E2ED3A1A0B1B78008FB715 /* AppDelegate.m */; };
 		31E2ED3E1A0B1B78008FB715 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E2ED3D1A0B1B78008FB715 /* ViewController.m */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		311B7F741A0BBA9F002083C9 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		31E2ED321A0B1B78008FB715 /* HanCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HanCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31E2ED361A0B1B78008FB715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31E2ED371A0B1B78008FB715 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		31E2ED351A0B1B78008FB715 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				311B7F741A0BBA9F002083C9 /* iTunesArtwork.png */,
 				31E2ED361A0B1B78008FB715 /* Info.plist */,
 				31E2ED371A0B1B78008FB715 /* main.m */,
 			);
@@ -201,6 +204,7 @@
 			files = (
 				31E2ED411A0B1B78008FB715 /* Main.storyboard in Resources */,
 				31E2ED461A0B1B78008FB715 /* LaunchScreen.xib in Resources */,
+				311B7F751A0BBA9F002083C9 /* iTunesArtwork.png in Resources */,
 				31E2ED431A0B1B78008FB715 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +416,7 @@
 				31E2ED571A0B1B78008FB715 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		31E2ED581A0B1B78008FB715 /* Build configuration list for PBXNativeTarget "HanCameraTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +425,7 @@
 				31E2ED5A1A0B1B78008FB715 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

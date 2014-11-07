@@ -12,6 +12,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *flashlightButton;
 @property (weak, nonatomic) IBOutlet UIView *previewLayer;
 @end
 
@@ -35,6 +36,11 @@
     if ([[self session] canAddInput:deviceInput])
         [[self session] addInput:deviceInput];
     
+    
+    // 设置闪光灯按钮
+    NSString *buttonTitle = [self getTitleByFlashlightMode:captureDevice.flashMode];
+    [[self flashlightButton] setTitle:buttonTitle forState:normal];
+    
     // 预览 session
     AVCaptureVideoPreviewLayer *previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:[self session]];
     [previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
@@ -45,18 +51,16 @@
     [rootLayer insertSublayer:previewLayer atIndex:0];
     
     // output
-    if (self.imageOutput == nil) {
-        self.imageOutput = [[AVCaptureStillImageOutput alloc] init];
+    if ([self imageOutput] == nil) {
+        [self setImageOutput:[[AVCaptureStillImageOutput alloc] init]];
     }
     
     NSDictionary *setting = [[NSDictionary alloc]initWithObjectsAndKeys:AVVideoCodecJPEG, AVVideoCodecKey, nil];
-    
-    [self.imageOutput setOutputSettings:setting];
+    [[self imageOutput] setOutputSettings:setting];
     
     [session addOutput:self.imageOutput];
     
     [[self session] startRunning];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -111,46 +115,92 @@
                                   (NSString *) kUTTypeImage,
                                   nil];
         imagePicker.allowsEditing = NO;
-        [self presentModalViewController:imagePicker animated:YES]; // TODO
+        [self presentViewController:imagePicker animated:YES completion:^(void){}];
         //[imagePicker release];
         // newMedia = NO;
     }
 }
 
-
-- (IBAction)switchCameraButton:(id)sender {
+- (AVCaptureDeviceInput *)getVideoInput {
     
     for (AVCaptureDeviceInput *input in self.session.inputs) {
         if ([input.device hasMediaType:AVMediaTypeVideo]) {
-            
-            AVCaptureDevicePosition newPosition = AVCaptureDevicePositionFront;
-            if (input.device.position == AVCaptureDevicePositionFront) {
-                newPosition = AVCaptureDevicePositionBack;
-            }
-            
-            AVCaptureDevice *newDevice = nil;
-            NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
-            for (AVCaptureDevice *device in devices)
-            {
-                if ([device position] == newPosition)
-                {
-                    newDevice = device;
-                    break;
-                }
-            }
-            
-            NSError	*error;
-            AVCaptureDeviceInput *newInput = [AVCaptureDeviceInput deviceInputWithDevice:newDevice error:&error];
-            
-            [self.session beginConfiguration];
-            [self.session removeInput:input];
-            [self.session addInput:newInput];
-            [self.session commitConfiguration];
-            
-            break;
+            return input;
         }
     }
     
+    return nil;
+}
+
+
+- (IBAction)switchCameraButton:(id)sender {
+    
+    AVCaptureDeviceInput *currentInput = [self getVideoInput];
+    
+    if (currentInput) {
+        AVCaptureDevicePosition newPosition = AVCaptureDevicePositionFront;
+        if (currentInput.device.position == AVCaptureDevicePositionFront) {
+            newPosition = AVCaptureDevicePositionBack;
+        }
+        
+        AVCaptureDevice *newDevice = nil;
+        NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+        for (AVCaptureDevice *device in devices)
+        {
+            if ([device position] == newPosition)
+            {
+                newDevice = device;
+                break;
+            }
+        }
+        
+        NSError	*error;
+        AVCaptureDeviceInput *newInput = [AVCaptureDeviceInput deviceInputWithDevice:newDevice error:&error];
+        
+        [self.session beginConfiguration];
+        [self.session removeInput:currentInput];
+        [self.session addInput:newInput];
+        [self.session commitConfiguration];
+        
+        // font camera 时隐藏闪光灯按钮
+        if (newDevice.position == AVCaptureDevicePositionFront) {
+            [self.flashlightButton setHidden:YES];
+        } else {
+            [self.flashlightButton setHidden:NO];
+        }
+    }
+}
+
+- (NSString *) getTitleByFlashlightMode:(AVCaptureFlashMode) flashMode {
+    NSString *buttonTitle;
+    if (flashMode == AVCaptureFlashModeAuto) {
+        buttonTitle = @"Auto";
+    } else if (flashMode == AVCaptureFlashModeOff) {
+        buttonTitle = @"Off";
+    } else {
+        buttonTitle = @"On";
+    }
+    
+    return buttonTitle;
+}
+
+- (IBAction)clickFlashlightButton:(id)sender {
+    AVCaptureDeviceInput *input = [self getVideoInput];
+    
+    [input.device lockForConfiguration:nil];
+    
+    if (input.device.flashMode == AVCaptureFlashModeAuto) {
+        [input.device setFlashMode:AVCaptureFlashModeOff];
+    } else if (input.device.flashMode == AVCaptureFlashModeOff) {
+        [input.device setFlashMode:AVCaptureFlashModeOn];
+    } else {
+        [input.device setFlashMode:AVCaptureFlashModeAuto];
+    }
+    
+    [input.device unlockForConfiguration];
+    
+    NSString *buttonTitle = [self getTitleByFlashlightMode:input.device.flashMode];
+    [[self flashlightButton] setTitle:buttonTitle forState:normal];
     
 }
 

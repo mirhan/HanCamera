@@ -18,6 +18,7 @@
 - (IBAction)snapeImageButton:(id)sender;
 - (IBAction)cameraRollButton:(id)sender;
 - (IBAction)switchCameraButton:(id)sender;
+- (IBAction)clickFlashlightButton:(id)sender;
 
 @end
 
