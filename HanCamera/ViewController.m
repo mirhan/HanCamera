@@ -8,10 +8,10 @@
 
 #import <Foundation/NSDictionary.h>
 #import <AssetsLibrary/AssetsLibrary.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 #import "ViewController.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *snapButton;
 @property (weak, nonatomic) IBOutlet UIView *previewLayer;
 @end
 
@@ -95,6 +95,63 @@
                                   orientation:(ALAssetOrientation)[image imageOrientation]
                               completionBlock:completionBlock];
     }];
+}
+
+- (IBAction)cameraRollButton:(id)sender {
+    
+    if ([UIImagePickerController isSourceTypeAvailable:
+         UIImagePickerControllerSourceTypeSavedPhotosAlbum])
+    {
+        UIImagePickerController *imagePicker =
+        [[UIImagePickerController alloc] init];
+        imagePicker.delegate = self;
+        imagePicker.sourceType =
+        UIImagePickerControllerSourceTypePhotoLibrary;
+        imagePicker.mediaTypes = [NSArray arrayWithObjects:
+                                  (NSString *) kUTTypeImage,
+                                  nil];
+        imagePicker.allowsEditing = NO;
+        [self presentModalViewController:imagePicker animated:YES]; // TODO
+        //[imagePicker release];
+        // newMedia = NO;
+    }
+}
+
+
+- (IBAction)switchCameraButton:(id)sender {
+    
+    for (AVCaptureDeviceInput *input in self.session.inputs) {
+        if ([input.device hasMediaType:AVMediaTypeVideo]) {
+            
+            AVCaptureDevicePosition newPosition = AVCaptureDevicePositionFront;
+            if (input.device.position == AVCaptureDevicePositionFront) {
+                newPosition = AVCaptureDevicePositionBack;
+            }
+            
+            AVCaptureDevice *newDevice = nil;
+            NSArray *devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+            for (AVCaptureDevice *device in devices)
+            {
+                if ([device position] == newPosition)
+                {
+                    newDevice = device;
+                    break;
+                }
+            }
+            
+            NSError	*error;
+            AVCaptureDeviceInput *newInput = [AVCaptureDeviceInput deviceInputWithDevice:newDevice error:&error];
+            
+            [self.session beginConfiguration];
+            [self.session removeInput:input];
+            [self.session addInput:newInput];
+            [self.session commitConfiguration];
+            
+            break;
+        }
+    }
+    
+    
 }
 
 @end

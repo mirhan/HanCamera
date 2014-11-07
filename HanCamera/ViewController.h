@@ -9,13 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic,retain) AVCaptureSession *session;
 @property AVCaptureStillImageOutput *imageOutput;
 
 #pragma mark Actions
 - (IBAction)snapeImageButton:(id)sender;
+- (IBAction)cameraRollButton:(id)sender;
+- (IBAction)switchCameraButton:(id)sender;
 
 @end
 
