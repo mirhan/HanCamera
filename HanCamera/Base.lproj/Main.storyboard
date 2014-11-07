@@ -46,7 +46,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cameraRollButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="dWn-xs-b6h"/>
+                                    <action selector="clickCameraRollButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Hxh-GR-6yt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7d-VB-NWL">
@@ -58,7 +58,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Snap"/>
                                 <connections>
-                                    <action selector="snapeImageButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="NS6-TJ-fGh"/>
+                                    <action selector="clickSnapeImageButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fef-Wl-ngN"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -15,8 +15,8 @@
 @property AVCaptureStillImageOutput *imageOutput;
 
 #pragma mark Actions
-- (IBAction)snapeImageButton:(id)sender;
-- (IBAction)cameraRollButton:(id)sender;
+- (IBAction)clickSnapeImageButton:(id)sender;
+- (IBAction)clickCameraRollButton:(id)sender;
 - (IBAction)switchCameraButton:(id)sender;
 - (IBAction)clickFlashlightButton:(id)sender;
 

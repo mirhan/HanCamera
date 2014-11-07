@@ -68,7 +68,22 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)snapeImageButton:(id)sender {
+- (IBAction)clickSnapeImageButton:(id)sender {
+    
+    // 闪光弹！
+    UIView *flashView = [[UIView alloc] initWithFrame:[[self previewLayer] frame]];
+    [flashView setBackgroundColor:[UIColor whiteColor]];
+    [[[self previewLayer] window] addSubview:flashView];
+    
+    [UIView animateWithDuration:.4f
+                     animations:^{
+                         [flashView setAlpha:0]; // why 0.f ?
+                     }
+                     completion:^(BOOL finished){
+                         [flashView removeFromSuperview];
+                     }];
+    
+    // 获取相机的连接
     AVCaptureConnection *connection = nil;
     for (AVCaptureConnection *tempConnection in self.imageOutput.connections) {
         for (AVCaptureInputPort *port in [tempConnection inputPorts]) {
@@ -81,9 +96,6 @@
             break;
         }
     }
-    
-    NSLog(@"about to request a capture from: %@", self.imageOutput);
-    
     
     // 保存图片
     [self.imageOutput captureStillImageAsynchronouslyFromConnection:connection completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
@@ -101,7 +113,7 @@
     }];
 }
 
-- (IBAction)cameraRollButton:(id)sender {
+- (IBAction)clickCameraRollButton:(id)sender {
     
     if ([UIImagePickerController isSourceTypeAvailable:
          UIImagePickerControllerSourceTypeSavedPhotosAlbum])
