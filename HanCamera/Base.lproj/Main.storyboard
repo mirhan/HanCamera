@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VsT-B0-nyO">
-                                        <rect key="frame" x="8" y="8" width="46" height="30"/>
+                                        <rect key="frame" x="8" y="8" width="60" height="43"/>
                                         <state key="normal" title="Auto">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -29,7 +29,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6g-SZ-Xt9">
-                                        <rect key="frame" x="16" y="530" width="30" height="30"/>
+                                        <rect key="frame" x="8" y="517" width="60" height="43"/>
                                         <state key="normal" title="Roll">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -38,7 +38,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7d-VB-NWL">
-                                        <rect key="frame" x="138" y="530" width="44" height="30"/>
+                                        <rect key="frame" x="130" y="517" width="60" height="43"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="Snap"/>
                                         <connections>
@@ -46,7 +46,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsM-30-cOg">
-                                        <rect key="frame" x="265" y="8" width="47" height="30"/>
+                                        <rect key="frame" x="252" y="8" width="60" height="43"/>
                                         <state key="normal" title="Switch">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -54,10 +54,20 @@
                                             <action selector="switchCameraButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gnI-NC-0gX"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPN-uA-X93">
+                                        <rect key="frame" x="123" y="8" width="74" height="43"/>
+                                        <state key="normal" title="Proportion">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickProportionButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="F7l-Fz-3bq"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="X7d-VB-NWL" secondAttribute="centerX" id="5Xb-hS-83G"/>
+                                    <constraint firstAttribute="centerX" secondItem="cPN-uA-X93" secondAttribute="centerX" id="rlN-aq-Wiq"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -70,7 +80,10 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="flashlightButton" destination="VsT-B0-nyO" id="v0m-ZA-9JE"/>
-                        <outlet property="previewLayer" destination="OGA-Ch-cPK" id="egX-0b-HmP"/>
+                        <outlet property="preview" destination="OGA-Ch-cPK" id="625-xK-mqH"/>
+                        <outlet property="proportionButton" destination="cPN-uA-X93" id="Qsy-WY-mNW"/>
+                        <outlet property="snapButton" destination="X7d-VB-NWL" id="lSP-D0-dUZ"/>
+                        <outlet property="switchCameraButton" destination="vsM-30-cOg" id="BUQ-aw-DY1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

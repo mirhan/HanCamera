@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		311B7F751A0BBA9F002083C9 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 311B7F741A0BBA9F002083C9 /* iTunesArtwork.png */; };
+		3163BFDC1A0DB609008D75B4 /* flashlightAuto.png in Resources */ = {isa = PBXBuildFile; fileRef = 3163BFD91A0DB609008D75B4 /* flashlightAuto.png */; };
+		3163BFDD1A0DB609008D75B4 /* flashlightOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 3163BFDA1A0DB609008D75B4 /* flashlightOff.png */; };
+		3163BFDE1A0DB609008D75B4 /* flashlightOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 3163BFDB1A0DB609008D75B4 /* flashlightOn.png */; };
+		3163BFE01A0DB64A008D75B4 /* snap.png in Resources */ = {isa = PBXBuildFile; fileRef = 3163BFDF1A0DB64A008D75B4 /* snap.png */; };
+		3163BFE21A0DE649008D75B4 /* switchCamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 3163BFE11A0DE648008D75B4 /* switchCamera.png */; };
 		31E2ED381A0B1B78008FB715 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E2ED371A0B1B78008FB715 /* main.m */; };
 		31E2ED3B1A0B1B78008FB715 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E2ED3A1A0B1B78008FB715 /* AppDelegate.m */; };
 		31E2ED3E1A0B1B78008FB715 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E2ED3D1A0B1B78008FB715 /* ViewController.m */; };
@@ -29,6 +34,11 @@
 
 /* Begin PBXFileReference section */
 		311B7F741A0BBA9F002083C9 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		3163BFD91A0DB609008D75B4 /* flashlightAuto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flashlightAuto.png; sourceTree = "<group>"; };
+		3163BFDA1A0DB609008D75B4 /* flashlightOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flashlightOff.png; sourceTree = "<group>"; };
+		3163BFDB1A0DB609008D75B4 /* flashlightOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flashlightOn.png; sourceTree = "<group>"; };
+		3163BFDF1A0DB64A008D75B4 /* snap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snap.png; sourceTree = "<group>"; };
+		3163BFE11A0DE648008D75B4 /* switchCamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchCamera.png; sourceTree = "<group>"; };
 		31E2ED321A0B1B78008FB715 /* HanCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HanCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31E2ED361A0B1B78008FB715 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31E2ED371A0B1B78008FB715 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -62,6 +72,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3163BFD81A0DB5E4008D75B4 /* buttonImage */ = {
+			isa = PBXGroup;
+			children = (
+				3163BFE11A0DE648008D75B4 /* switchCamera.png */,
+				3163BFDF1A0DB64A008D75B4 /* snap.png */,
+				3163BFD91A0DB609008D75B4 /* flashlightAuto.png */,
+				3163BFDA1A0DB609008D75B4 /* flashlightOff.png */,
+				3163BFDB1A0DB609008D75B4 /* flashlightOn.png */,
+			);
+			name = buttonImage;
+			sourceTree = "<group>";
+		};
 		31E2ED291A0B1B78008FB715 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +120,7 @@
 		31E2ED351A0B1B78008FB715 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3163BFD81A0DB5E4008D75B4 /* buttonImage */,
 				311B7F741A0BBA9F002083C9 /* iTunesArtwork.png */,
 				31E2ED361A0B1B78008FB715 /* Info.plist */,
 				31E2ED371A0B1B78008FB715 /* main.m */,
@@ -203,9 +226,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				31E2ED411A0B1B78008FB715 /* Main.storyboard in Resources */,
+				3163BFDC1A0DB609008D75B4 /* flashlightAuto.png in Resources */,
 				31E2ED461A0B1B78008FB715 /* LaunchScreen.xib in Resources */,
+				3163BFDD1A0DB609008D75B4 /* flashlightOff.png in Resources */,
+				3163BFE21A0DE649008D75B4 /* switchCamera.png in Resources */,
 				311B7F751A0BBA9F002083C9 /* iTunesArtwork.png in Resources */,
+				3163BFE01A0DB64A008D75B4 /* snap.png in Resources */,
 				31E2ED431A0B1B78008FB715 /* Images.xcassets in Resources */,
+				3163BFDE1A0DB609008D75B4 /* flashlightOn.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
