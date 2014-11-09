@@ -28,10 +28,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setCameraMode:hcCameraModeFullScreen];
+    [self setCameraMode:hcCameraMode9to16];
     
     [[[self preview] layer] setBackgroundColor:[[UIColor blackColor]CGColor]];
-
+    
     // session 连接到 captureDevive
     if ([self session] == nil) {
         [self setSession:[[AVCaptureSession alloc] init]];
@@ -85,9 +85,10 @@
                              image.scale * newSize.height,
                              image.scale * newSize.width);
     
-    NSLog(@"rect = %@", NSStringFromCGRect(rect));
     CGImageRef imageRef = CGImageCreateWithImageInRect(image.CGImage, rect);
     UIImage *newImage = [UIImage imageWithCGImage:imageRef scale:image.scale orientation:image.imageOrientation];
+    
+    CGImageRelease(imageRef);
     
     return newImage;
 }
@@ -264,7 +265,7 @@
     
     hcCameraMode newCameraMode;
     if ([self cameraMode] == hcCameraMode3to4) {
-        newCameraMode = hcCameraModeFullScreen;
+        newCameraMode = hcCameraMode9to16;
     } else {
         newCameraMode = [self cameraMode] + 1;
     }
@@ -274,9 +275,9 @@
     
     AVCaptureVideoPreviewLayer *subPreviewLayer = [[[[self preview] layer] sublayers] objectAtIndex:0];
     [subPreviewLayer removeFromSuperlayer];
-    [subPreviewLayer setFrame:[self getFrameByMode:[self cameraMode]]];
+    CGRect rect = [self getFrameByMode:[self cameraMode]];
+    [subPreviewLayer setFrame:rect];
     [[[self preview] layer] insertSublayer:subPreviewLayer atIndex:0];
-    
 }
 
 - (void) setViewsOfButtons:(AVCaptureDevice*) captureDevice {
@@ -307,8 +308,8 @@
 
 - (NSString *) getTitleByCameraMode:(hcCameraMode) theCameraMode{
     NSString *buttonTitle;
-    if (theCameraMode == hcCameraModeFullScreen) {
-        buttonTitle = @"Full";
+    if (theCameraMode == hcCameraMode9to16) {
+        buttonTitle = @"16:9";
     } else if (theCameraMode == hcCameraMode1to1) {
         buttonTitle = @"1:1";
     } else { // hcCameraMode3to4
@@ -354,7 +355,7 @@
     
     CGSize newSize;
     
-    if (proportion > 320 / 568) {
+    if (proportion > 320.0 / 568.0) {
         newSize.width  = size.width;
         newSize.height = size.width / proportion;
     } else {
@@ -371,8 +372,8 @@
         return 1.0 / 1.0;
     } else if (theCameraMode == hcCameraMode3to4) {
         return 3.0 / 4.0;
-    } else {// hcCameraModeFullScreen
-        return 320.0 / 568.0;
+    } else {// hcCameraMode9to16
+        return 9.0 / 16.0;
     }
 }
 

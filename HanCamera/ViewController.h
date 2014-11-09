@@ -10,7 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 
 typedef enum : NSUInteger {
-    hcCameraModeFullScreen,
+    hcCameraMode9to16,
     hcCameraMode1to1,
     hcCameraMode3to4,
 } hcCameraMode;
