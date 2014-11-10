@@ -25,7 +25,7 @@ typedef enum : NSUInteger {
 #pragma mark Actions
 - (IBAction)clickSnapImageButton:(id)sender;
 - (IBAction)clickCameraRollButton:(id)sender;
-- (IBAction)switchCameraButton:(id)sender;
+- (IBAction)clickSwitchCameraButton:(id)sender;
 - (IBAction)clickFlashlightButton:(id)sender;
 - (IBAction)clickProportionButton:(id)sender;
 

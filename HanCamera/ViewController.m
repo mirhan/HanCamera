@@ -10,6 +10,7 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import "ViewController.h"
+#import "EditViewController.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *proportionButton;
@@ -62,7 +63,8 @@
 - (void) loadPreviewLayer {
     AVCaptureVideoPreviewLayer *previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:[self session]];
     
-    [previewLayer setFrame:[self getFrameByMode:[self cameraMode]]];
+    CGFloat proportion = [self getPoportionByHcCameraMode:[self cameraMode]];
+    [previewLayer setFrame:[self getFrameByProportion:proportion]];
     
     [previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
     
@@ -89,7 +91,7 @@
     return newImage;
 }
 
-// TODO
+// 按照 size 缩放图片
 - (UIImage*)imageWithImage:(UIImage*)image scaledToSize:(CGSize)newSize;
 {
     // Create a graphics image context
@@ -114,9 +116,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+// 拍照按钮
 - (IBAction)clickSnapImageButton:(id)sender {
     
-    // 闪光弹！
+    // 闪光效果
     UIView *flashView = [[UIView alloc] initWithFrame:[[self preview] frame]];
     [flashView setBackgroundColor:[UIColor blackColor]];
     [[[self preview] window] addSubview:flashView];
@@ -151,18 +154,11 @@
         CGFloat proportion = [self getPoportionByHcCameraMode:[self cameraMode]];
         image = [self cropImageWithImage:image proportion:proportion];
         
-        ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
-        ALAssetsLibraryWriteImageCompletionBlock completionBlock = ^(NSURL *assetURL, NSError *error) {
-            if (error) {
-                // TODO
-            }
-        };
-        [library writeImageToSavedPhotosAlbum:[image CGImage]
-                                  orientation:(ALAssetOrientation)[image imageOrientation]
-                              completionBlock:completionBlock];
+        UIImageWriteToSavedPhotosAlbum(image, self, nil, nil); // TODO 异常处理
     }];
 }
 
+// 图片库按钮
 - (IBAction)clickCameraRollButton:(id)sender {
     
     if ([UIImagePickerController isSourceTypeAvailable:
@@ -178,10 +174,46 @@
                                   nil];
         imagePicker.allowsEditing = NO;
         [self presentViewController:imagePicker animated:YES completion:^(void){}];
-        // newMedia = NO;
     }
 }
 
+// 图库选中了照片
+- (void)imagePickerController: (UIImagePickerController *)picker
+didFinishPickingMediaWithInfo: (NSDictionary *)info
+{
+    NSString *mediaType = [info objectForKey:UIImagePickerControllerMediaType];
+    
+    [picker dismissViewControllerAnimated:YES completion:^(void){}];
+    
+    if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
+        UIImage *image = [info
+                          objectForKey:UIImagePickerControllerOriginalImage];
+        
+        UIImage *newImage = [EditViewController effectImage:image byFilterName:@"None"];
+        
+        EditViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"theEditView"];
+        
+        [viewController setOriginalImage:image];
+        [viewController setImage:newImage];
+        
+        
+        [self presentViewController:viewController animated:YES completion:^{
+        }];
+    }
+}
+
+// 保存图片出现 error
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error
+  contextInfo:(void *)contextInfo
+{
+    if (error != NULL)
+    {
+        NSLog(@"error - didFinishSavingWithError");
+        
+    }
+}
+
+// 获取相机 input
 - (AVCaptureDeviceInput *)getVideoInput {
     
     for (AVCaptureDeviceInput *input in self.session.inputs) {
@@ -193,8 +225,8 @@
     return nil;
 }
 
-
-- (IBAction)switchCameraButton:(id)sender {
+// 前后摄像头按钮
+- (IBAction)clickSwitchCameraButton:(id)sender {
     
     AVCaptureDeviceInput *currentInput = [self getVideoInput];
     
@@ -232,7 +264,7 @@
     }
 }
 
-
+// 闪光灯按钮
 - (IBAction)clickFlashlightButton:(id)sender {
     AVCaptureDeviceInput *input = [self getVideoInput];
     
@@ -257,6 +289,7 @@
     
 }
 
+// 画幅比例按钮
 - (IBAction)clickProportionButton:(id)sender {
     
     hcCameraMode newCameraMode;
@@ -271,11 +304,14 @@
     
     AVCaptureVideoPreviewLayer *subPreviewLayer = [[[[self preview] layer] sublayers] objectAtIndex:0];
     [subPreviewLayer removeFromSuperlayer];
-    CGRect rect = [self getFrameByMode:[self cameraMode]];
+    
+    CGFloat proportion = [self getPoportionByHcCameraMode:[self cameraMode]];
+    CGRect rect = [self getFrameByProportion:proportion];
     [subPreviewLayer setFrame:rect];
     [[[self preview] layer] insertSublayer:subPreviewLayer atIndex:0];
 }
 
+// 初始化按键
 - (void) initViewsOfButtons:(AVCaptureFlashMode) flashMode {
     
     // 闪光灯按钮
@@ -345,13 +381,14 @@
     return buttonImage;
 }
 
+// 根据比例获得缩小后的 size
 - (CGSize) sizeWithSize:(CGSize) size poportion:(CGFloat) proportion{
     
-    // TODO 待优化，
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    CGFloat screenProportion = screenSize.width / screenSize.height;
     
     CGSize newSize;
-    
-    if (proportion > 320.0 / 568.0) {
+    if (proportion > screenProportion) {
         newSize.width  = size.width;
         newSize.height = size.width / proportion;
     } else {
@@ -362,6 +399,7 @@
     return newSize;
 }
 
+// 根据 cameraMode 获取比例
 - (CGFloat) getPoportionByHcCameraMode:(hcCameraMode) theCameraMode {
     
     if (theCameraMode == hcCameraMode1to1) {
@@ -373,15 +411,17 @@
     }
 }
 
-- (CGRect) getFrameByMode:(hcCameraMode) theCameraMode {
-    CGSize screenSize = CGSizeMake(320.0, 568.0); // TODO
-    CGFloat poportion = [self getPoportionByHcCameraMode:theCameraMode];
-    CGSize newSize = [self sizeWithSize:screenSize poportion:poportion];
+// 根据比例获取 frame
+- (CGRect) getFrameByProportion:(CGFloat) proportion {
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    
+    CGSize newSize = [self sizeWithSize:screenSize poportion:proportion];
     
     return CGRectMake(screenSize.width / 2 - newSize.width / 2,
                       screenSize.height / 2 - newSize.height / 2,
                       newSize.width,
                       newSize.height);
 }
+
 
 @end
