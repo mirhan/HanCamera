@@ -33,26 +33,22 @@
     [[[self preview] layer] setBackgroundColor:[[UIColor blackColor]CGColor]];
     
     // session 连接到 captureDevive
-    if ([self session] == nil) {
-        [self setSession:[[AVCaptureSession alloc] init]];
-    }
-    
+    [self setSession:[[AVCaptureSession alloc] init]];
+
     AVCaptureDevice *captureDevice = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
-    NSError	*error;
-    AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice error:&error];
-    
-    [self setViewsOfButtons:captureDevice];
+    AVCaptureDeviceInput *deviceInput = [AVCaptureDeviceInput deviceInputWithDevice:captureDevice error:nil];
     
     if ([[self session] canAddInput:deviceInput])
         [[self session] addInput:deviceInput];
+    
+    // 初始化界面按键
+    [self initViewsOfButtons:captureDevice.flashMode];
     
     // 预览 session
     [self loadPreviewLayer];
     
     // output
-    if ([self imageOutput] == nil) {
-        [self setImageOutput:[[AVCaptureStillImageOutput alloc] init]];
-    }
+    [self setImageOutput:[[AVCaptureStillImageOutput alloc] init]];
     
     NSDictionary *setting = [[NSDictionary alloc]initWithObjectsAndKeys:AVVideoCodecJPEG, AVVideoCodecKey, nil];
     [[self imageOutput] setOutputSettings:setting];
@@ -118,7 +114,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)clickSnapeImageButton:(id)sender {
+- (IBAction)clickSnapImageButton:(id)sender {
     
     // 闪光弹！
     UIView *flashView = [[UIView alloc] initWithFrame:[[self preview] frame]];
@@ -127,7 +123,7 @@
     
     [UIView animateWithDuration:.4f
                      animations:^{
-                         [flashView setAlpha:0]; // why 0.f ?
+                         [flashView setAlpha:0.f];
                      }
                      completion:^(BOOL finished){
                          [flashView removeFromSuperview];
@@ -280,13 +276,13 @@
     [[[self preview] layer] insertSublayer:subPreviewLayer atIndex:0];
 }
 
-- (void) setViewsOfButtons:(AVCaptureDevice*) captureDevice {
+- (void) initViewsOfButtons:(AVCaptureFlashMode) flashMode {
     
     // 闪光灯按钮
-    NSString *buttonTitle = [self getTitleByFlashlightMode:captureDevice.flashMode];
+    NSString *buttonTitle = [self getTitleByFlashlightMode:flashMode];
     [[self flashlightButton] setTitle:buttonTitle forState:normal];
     
-    UIImage *buttonImage = [self getImageByFlashlightMode:captureDevice.flashMode];
+    UIImage *buttonImage = [self getImageByFlashlightMode:flashMode];
     buttonImage = [self imageWithImage:buttonImage scaledToSize:CGRectMake(0,0,40,40).size];
     [[self flashlightButton] setImage:buttonImage forState:UIControlStateNormal];
     
@@ -340,7 +336,7 @@
         imageName = @"flashlightAuto.png";
     } else if (flashMode == AVCaptureFlashModeOff) {
         imageName = @"flashlightOff.png";
-    } else {
+    } else { // AVCaptureFlashModeOn
         imageName = @"flashlightOn.png";
     }
     

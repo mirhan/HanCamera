@@ -23,7 +23,7 @@ typedef enum : NSUInteger {
 @property hcCameraMode cameraMode;
 
 #pragma mark Actions
-- (IBAction)clickSnapeImageButton:(id)sender;
+- (IBAction)clickSnapImageButton:(id)sender;
 - (IBAction)clickCameraRollButton:(id)sender;
 - (IBAction)switchCameraButton:(id)sender;
 - (IBAction)clickFlashlightButton:(id)sender;

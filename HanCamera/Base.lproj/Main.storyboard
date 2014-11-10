@@ -42,7 +42,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="Snap"/>
                                         <connections>
-                                            <action selector="clickSnapeImageButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fef-Wl-ngN"/>
+                                            <action selector="clickSnapImageButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Y4P-jI-BbK"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsM-30-cOg">
