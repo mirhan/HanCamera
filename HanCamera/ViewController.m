@@ -153,7 +153,7 @@
         CGFloat proportion = [self getPoportionByHcCameraMode:[self cameraMode]];
         image = [self cropImageWithImage:image proportion:proportion];
         
-        UIImageWriteToSavedPhotosAlbum(image, self, nil, nil); // TODO 异常处理
+        [self presentEditViewController:image];
     }];
 }
 
