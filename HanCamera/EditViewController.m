@@ -112,7 +112,7 @@
     
     CIContext *context = [CIContext contextWithOptions:nil];
     
-    CIImage *ciImage = [[CIImage alloc] initWithImage:tempImage]; // 解决过滤后图片方向不对的问题
+    CIImage *ciImage = [[CIImage alloc] initWithImage:tempImage]; // 解决滤镜后图片方向不对的问题
     
     CIFilter *filter = [CIFilter filterWithName:filterName];
     [filter setValue:ciImage forKey:kCIInputImageKey];

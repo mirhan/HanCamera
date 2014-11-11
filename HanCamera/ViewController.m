@@ -188,17 +188,20 @@ didFinishPickingMediaWithInfo: (NSDictionary *)info
         UIImage *image = [info
                           objectForKey:UIImagePickerControllerOriginalImage];
         
-        UIImage *newImage = [EditViewController effectImage:image byFilterName:@"None"];
-        
-        EditViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"theEditView"];
-        
-        [viewController setOriginalImage:image];
-        [viewController setImage:newImage];
-        
-        
-        [self presentViewController:viewController animated:YES completion:^{
-        }];
+        [self presentEditViewController:image];
     }
+}
+
+- (void)presentEditViewController:(UIImage*) uiimage {
+    UIImage *newImage = [EditViewController effectImage:uiimage byFilterName:@"None"];
+    
+    EditViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"theEditView"];
+    
+    [viewController setOriginalImage:uiimage];
+    [viewController setImage:newImage];
+    
+    [self presentViewController:viewController animated:YES completion:^{
+    }];
 }
 
 // 保存图片出现 error
