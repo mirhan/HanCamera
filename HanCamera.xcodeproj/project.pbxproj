@@ -108,12 +108,12 @@
 		31E2ED341A0B1B78008FB715 /* HanCamera */ = {
 			isa = PBXGroup;
 			children = (
-				31BA4F841A11149C008089FC /* EditViewController.h */,
-				31BA4F851A11149C008089FC /* EditViewController.m */,
 				31E2ED391A0B1B78008FB715 /* AppDelegate.h */,
 				31E2ED3A1A0B1B78008FB715 /* AppDelegate.m */,
 				31E2ED3C1A0B1B78008FB715 /* ViewController.h */,
 				31E2ED3D1A0B1B78008FB715 /* ViewController.m */,
+				31BA4F841A11149C008089FC /* EditViewController.h */,
+				31BA4F851A11149C008089FC /* EditViewController.m */,
 				31E2ED3F1A0B1B78008FB715 /* Main.storyboard */,
 				31E2ED421A0B1B78008FB715 /* Images.xcassets */,
 				31E2ED441A0B1B78008FB715 /* LaunchScreen.xib */,

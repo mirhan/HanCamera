@@ -77,7 +77,6 @@
     
     CGSize newSize = [self sizeWithSize:image.size poportion:proportion];
     
-    // 这里将 width / height 颠倒了，原因应该与图片的 orientation 属性相关，待研究
     CGRect rect = CGRectMake(image.scale * (image.size.height / 2 - newSize.height / 2),
                              image.scale * (image.size.width / 2 - newSize.width / 2),
                              image.scale * newSize.height,
@@ -150,7 +149,7 @@
     [self.imageOutput captureStillImageAsynchronouslyFromConnection:connection completionHandler:^(CMSampleBufferRef imageDataSampleBuffer, NSError *error) {
         NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageDataSampleBuffer];
         UIImage *image = [[UIImage alloc]initWithData:imageData];
-        // TODO 切割图片
+        // 切割图片
         CGFloat proportion = [self getPoportionByHcCameraMode:[self cameraMode]];
         image = [self cropImageWithImage:image proportion:proportion];
         
